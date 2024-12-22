@@ -22,7 +22,7 @@
 05. Создать базу данных: `python manage.py migrate`
 06. Установить Redis, запустить командой: `redis-server`
 07. Запустить сервер: `python manage.py runserver`
-08. В программе Postman: зарегистрироваться в админке и создайть привычки
+08. В программе Postman: зарегистрироваться в админке и создать привычки
 09. В терминале запустить celery worker командой: `celery -A config worker -l INFO`
 10. В другом терминале запустить celery beat командой: `celery -A config beat -l info -S django`
 11. Зайти в телеграм бот и нажать `START`
