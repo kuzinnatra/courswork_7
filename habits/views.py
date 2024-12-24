@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from rest_framework import viewsets
 from drf_yasg.utils import swagger_auto_schema
@@ -23,12 +22,6 @@ class HabitViewSet(viewsets.ModelViewSet):
     ordering_fields = ("time",)
     permission_classes = [IsAuthenticated, IsOwner]
 
-    def get_permissions(self):
-        if self.action == 'create':
-            self.permission_classes = (IsAuthenticated, IsOwner,)
-        elif self.action == 'list':
-            self.permission_classes = (IsAuthenticated, IsOwner,)
-        return super().get_permissions()
 
     def get_queryset(self):
         return Habit.objects.filter(user=self.request.user.pk).order_by("id")
